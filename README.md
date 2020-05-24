@@ -14,8 +14,6 @@ First thing to do: left-side driving
 car-modified.lua:
 ```
 function setup()
-...
-function setup()
   return {
     properties = {
     ...
