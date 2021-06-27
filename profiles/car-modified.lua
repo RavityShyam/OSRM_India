@@ -14,7 +14,7 @@ Measure = require("lib/measure")
 function setup()
   return {
     properties = {
-      max_speed_for_map_matching      = 50/3.6, -- 180kmph -> m/s
+      max_speed_for_map_matching      = 100/3.6, -- 180kmph -> m/s
       -- For routing based on duration, but weighted for preferring certain roads
       weight_name                     = 'routability',
       -- For shortest duration without penalties for accessibility
@@ -30,7 +30,7 @@ function setup()
     },
 
     default_mode              = mode.driving,
-    default_speed             = 30/3.6,
+    default_speed             = 40/3.6,
     oneway_handling           = true,
     side_road_multiplier      = 0.8,
     turn_penalty              = 7.5,
@@ -139,20 +139,20 @@ function setup()
 
     speeds = Sequence {
       highway = {
-        motorway        = 40/3.6, -- 90,
-        motorway_link   = 40/3.6, -- 45,
-        trunk           = 40/3.6, -- 85,
-        trunk_link      = 40/3.6, -- 40,
-        primary         = 40/3.6, -- 65,
-        primary_link    = 40/3.6, -- 30,
-        secondary       = 40/3.6, -- 55,
-        secondary_link  = 40/3.6, -- 25,
-        tertiary        = 30/3.6, -- 40,
-        tertiary_link   = 30/3.6, -- 20,
-        unclassified    = 30/3.6, -- 25,
+        motorway        = 60/3.6, -- 90,
+        motorway_link   = 60/3.6, -- 45,
+        trunk           = 50/3.6, -- 85,
+        trunk_link      = 50/3.6, -- 50,
+        primary         = 50/3.6, -- 65,
+        primary_link    = 50/3.6, -- 30,
+        secondary       = 45/3.6, -- 55,
+        secondary_link  = 45/3.6, -- 25,
+        tertiary        = 40/3.6, -- 40,
+        tertiary_link   = 40/3.6, -- 20,
+        unclassified    = 40/3.6, -- 25,
         residential     = 20/3.6, -- 25,
-        living_street   = 20/3.6, -- 10,
-        service         = 20/3.6, -- 15
+        living_street   = 30/3.6, -- 10,
+        service         = 30/3.6, -- 15
       }
     },
 
@@ -208,9 +208,9 @@ function setup()
       ["concrete:lanes"] = nil,
       paved = nil,
 
-      cement = 40/3.6, --80,
-      compacted = 40/3.6, --80,
-      fine_gravel = 40/3.6, --80,
+      cement = 60/3.6, --80,
+      compacted = 60/3.6, --80,
+      fine_gravel = 60/3.6, --80,
 
       paving_stones = 40/3.6, --60,
       metal = 40/3.6, --60,
@@ -259,10 +259,10 @@ function setup()
 
     -- http://wiki.openstreetmap.org/wiki/Speed_limits
     maxspeed_table_default = {
-      urban = 40/3.6, --50,
-      rural = 40/3.6, --90,
-      trunk = 50/3.6, --110,
-      motorway = 50/3.6, --130
+      urban = 50/3.6, --50,
+      rural = 60/3.6, --90,
+      trunk = 60/3.6, --110,
+      motorway = 60/3.6, --130
     },
 
     -- List only exceptions
@@ -304,7 +304,7 @@ function setup()
       -- ["uk:motorway"] = (70*1609)/1000,
       -- ['za:urban'] = 60,
       -- ['za:rural'] = 100,
-      ["none"] = 40/3.6, --140
+      ["none"] = 60/3.6, --140
     },
 
     relation_types = Sequence {
